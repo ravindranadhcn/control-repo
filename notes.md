@@ -46,6 +46,6 @@ puppetserver:
 ##
 r10k:
   code:
-    readinessProbe:
+    readinessProbe: # needed due to a bug in helm chart (typo fixed 7/20 - chart 8.1.1)
       ["/bin/sh", "-ec", "test -f ~/.r10k_code_cronjob.success"]
 ```
