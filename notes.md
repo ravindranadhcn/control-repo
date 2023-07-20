@@ -26,6 +26,10 @@ docker rm -f goofy_xtigyro
 # Puppet helm chart values
 
 ```yaml
+puppetboard:
+  enabled: true
+  # normally enable ingress here, but I don't have contour configured in this cluster,   do a kubectl 
+  # expose or port forward
 puppetserver:
   name: puppetserver
   image: puppet/puppetserver
