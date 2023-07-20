@@ -7,4 +7,8 @@ class users {
            managehome => true,
            gid => 'puppetusers',
            password => 'test'}
+    # add a user, don't create a home directory
+          user { 'reese':
+          ensure => 'present',
+          }
 }
