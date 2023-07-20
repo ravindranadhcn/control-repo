@@ -39,9 +39,6 @@ puppetserver:
       alternateServerNames: "192.168.4.9"   # Comma-separated
     service:
       type: LoadBalancer
-        maxMasters: 3
-        cpuUtilizationPercentage: 75
-        memoryUtilizationPercentage: 75
   puppeturl: "https://github.com/jeffellin/control-repo"   #  git@github.com:$SOMEUSER/puppet.git
   puppetbasedir: /etc/puppetlabs/code/environments
 
@@ -49,6 +46,6 @@ puppetserver:
 ##
 r10k:
   code:
-    readinessProbe: # needed due to a bug in helm chart (typo fixed 7/20 - chart 8.1.1)
+    readinessProbe:
       ["/bin/sh", "-ec", "test -f ~/.r10k_code_cronjob.success"]
 ```
